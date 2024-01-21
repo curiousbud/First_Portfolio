@@ -11,15 +11,7 @@ This repository contains the source code and assets for my portfolio website. Th
 
 ## Live Site
 
-You can explore the live version of the portfolio website [here](#your-live-site-link).
-
-## Features
-
-- **Responsive Design:** Ensures optimal viewing experience on various devices.
-- **Sections:**
-  - **About Me:** A brief introduction to who I am.
-  - **Skills:** Display of my technical skills.
-  - **Projects:** Showcase of notable projects with descriptions.
+You can explore the live version of the portfolio website [here](https://curiousbud.netlify.app/).
 
 ## Technologies Used
 
