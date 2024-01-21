@@ -1,0 +1,177 @@
+:root {
+  --bg: #222;
+  --clr: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background: url("images/bg-oni.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+body::-webkit-scrollbar {
+  width: 0; /* For WebKit browsers (Chrome, Safari) */
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 5px 20px 0px 10px;
+}
+
+.name {
+  text-align: center;
+  margin: 0px 0px;
+}
+
+.name-descripstion {
+  margin: 2px 0px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-buttons {
+  position: relative;
+  display: flex;
+  gap: 50px;
+}
+
+.nav-buttons a {
+  position: relative;
+  list-style: none;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+  text-decoration: none;
+  z-index: 1; /* Ensure the icon is above the pseudo-elements */
+}
+
+.nav-buttons a::before {
+  content: "";
+  position: absolute;
+  inset: 30px;
+  box-shadow: 0 0 0 10px var(--clr), 0 0 0 20px var(--bg), 0 0 0 22px var(--clr);
+  transition: 0.5s;
+  z-index: -1; /* Move the pseudo-element below the icon */
+}
+
+.nav-buttons a:hover::before {
+  inset: 15px;
+}
+
+.nav-buttons a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.nav-buttons a:hover::after {
+  inset: 0px;
+  transform: rotate(0deg);
+}
+.nav-buttons a i {
+  font-size: 2em;
+  transition: 0.5s;
+  color: var(--clr);
+  opacity: 1;
+  z-index: 2; /* Adjusted z-index to 2 */
+}
+
+.nav-buttons a:hover i {
+  color: var(--clr);
+  transform: translateY(-40%);
+  z-index: 2; /* Adjusted z-index to 2 */
+}
+
+.nav-buttons a span {
+  position: absolute;
+  font-family: sans-serif;
+  color: var(--clr);
+  opacity: 0;
+  transition: 0.5s;
+  transform: scale(0) translateY(200%);
+  z-index: 1; /* Adjusted z-index to 1 */
+}
+
+.nav-buttons a:hover span {
+  opacity: 1;
+  transform: scale(1) translateY(100%);
+  z-index: 1; /* Adjusted z-index to 1 */
+}
+
+.nav-buttons a:hover i,
+.nav-buttons a span {
+  filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr))
+    drop-shadow(0 0 60px var(--clr));
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  border-bottom: 2px solid whitesmoke;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 15px 0;
+  }
+
+  .right-nav {
+    display: none;
+  }
+
+  .right-nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    text-align: center;
+  }
+
+  .right-nav.active a {
+    display: block;
+    margin: 10px 0;
+  }
+}
